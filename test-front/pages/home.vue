@@ -42,6 +42,7 @@ export default {
   data() {
     return {
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae justo eget magna fermentum iaculis eu non diam phasellus. Facilisi etiam dignissim diam quis enim lobortis. Mauris in aliquam sem fringilla. Nulla at volutpat diam ut venenatis. Nunc id cursus metus aliquam eleifend. Accumsan lacus vel facilisis volutpat est velit egestas dui id. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Mi in nulla posuere sollicitudin aliquam ultrices. Tincidunt eget nullam non nisi est sit.",
+      originalText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae justo eget magna fermentum iaculis eu non diam phasellus. Facilisi etiam dignissim diam quis enim lobortis. Mauris in aliquam sem fringilla. Nulla at volutpat diam ut venenatis. Nunc id cursus metus aliquam eleifend. Accumsan lacus vel facilisis volutpat est velit egestas dui id. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Mi in nulla posuere sollicitudin aliquam ultrices. Tincidunt eget nullam non nisi est sit.",
       messages: [],
       includeNewText: false,
       includeDoubleText: false,
@@ -64,7 +65,26 @@ export default {
     },
     replaceText() {
       if(this.messages != null) {
-        this.text = this.messages.join(' ')
+        switch (this.selectedOption) {
+          case "option1":
+            this.text = this.originalText
+            break
+          case "option2":
+            this.text = this.messages.join(' ')
+            break
+          case "optionRandom":
+            const randomOption = this.getRandomOption()
+            switch (randomOption) {
+              case "option1":
+                this.text = this.originalText
+                console.log(randomOption)
+                break
+              case "option2":
+                this.text = this.messages.join(' ')
+                console.log(randomOption)
+                break
+            }
+        }
       }
     },
     innerText() {
@@ -82,9 +102,30 @@ export default {
             } else return;
             break
           case "optionRandom":
-
+            const randomOption = this.getRandomOption()
+            switch (randomOption) {
+              case "option1":
+                if (this.includeDoubleText === false) {
+                  this.text += this.text
+                  this.selectedOption = true
+                  console.log(randomOption)
+                } else return
+                break
+              case "option2":
+                if (this.messages != null && this.includeNewText === false) {
+                  this.text += this.messages.join(' ')
+                  this.includeNewText = true;
+                  console.log(randomOption)
+                } else return;
+                break
+            }
         }
     },
+    getRandomOption() {
+      const options = ["option1", "option2"]
+      const randomOptionIndex = Math.floor(Math.random() * options.length);
+      return options[randomOptionIndex];
+    }
   },
 }
 </script>
