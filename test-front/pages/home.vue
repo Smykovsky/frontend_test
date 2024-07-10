@@ -65,6 +65,7 @@ export default {
     },
     replaceText() {
       if(this.messages != null) {
+        if (this.selectedOption === null) alert("Wybierz jedną z trzech opcji!")
         switch (this.selectedOption) {
           case "option1":
             this.text = this.originalText
@@ -88,6 +89,7 @@ export default {
       }
     },
     innerText() {
+      if (this.selectedOption === null) alert("Wybierz jedną z trzech opcji!")
         switch (this.selectedOption) {
           case "option1":
             if (this.includeDoubleText === false) {
