@@ -1,4 +1,4 @@
 PROBLEMY:
 1. Pojawienie się okienka po kliknięciu w przycisk "POKAŻ" znajdujący się w footerze (Zrobione"po swojemu")
 2. Treść działania radioButtonów w bloku pierwszym oraz przycisków w bloku drugim, nie do końca zrozumiana przezemnie, dlatego też może nie być do końca poprawnie pod względem funkcjonalności.
-3. Problem z wrzuceniem aplikacji na serwis Netfliy oraz Heroku.
+3. Problem z wrzuceniem aplikacji na serwis Netfliy oraz Heroku dlatego też aplikacja została postawiona na własnym VPS'ie i jest dostępna pod adresem: 51.83.132.106
