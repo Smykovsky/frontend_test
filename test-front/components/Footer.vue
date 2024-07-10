@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="footer-logo">
-      CSS <br> IS <br> AWESOME
+        CSS <br> IS <br> AWESOME
     </div>
     <div class="footer-text">
       nabthat

@@ -22,6 +22,8 @@
   .footer-logo:hover
     border: 1px solid #fe9e23
     color: white
+    animation: rotate 1s linear
+    box-sizing: border-box
   .footer-text
     margin-left: 5rem
     display: inline-block
@@ -100,6 +102,11 @@ li
 #frame:target
   display: block
 
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
 
 @media screen and (max-width: 950px)
   .footer
